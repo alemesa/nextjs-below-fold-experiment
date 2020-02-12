@@ -70,6 +70,7 @@ function App({ Component, pageProps }) {
         <link rel="canonical" href={process.env.WEBSITE_SITE_URL} />
         <link rel="dns-prefetch" href="//[NEXT-DNS-request.com]" />
         <script
+          // eslint-disable-next-line jam3/no-sanitizer-with-danger
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('enable-animations');"
           }}
