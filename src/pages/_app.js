@@ -40,7 +40,10 @@ function App({ Component, pageProps }) {
     <Layout>
       <Head>
         <meta name="title" content="Mondello Battle" />
-        <meta name="description" content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains" />
+        <meta
+          name="description"
+          content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains"
+        />
         <meta name="keywords" content="mondello,battle,mondello battle" />
         {/* Generate favicons in https://realfavicongenerator.net */}
         <meta name="theme-color" content="#ffffff" />
@@ -55,7 +58,10 @@ function App({ Component, pageProps }) {
         {/* Share meta tags */}
         <meta property="og:locale" content="en_US" />>
         <meta property="og:title" content="The battle of Mondello Beach" />
-        <meta property="og:description" content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains" />
+        <meta
+          property="og:description"
+          content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.WEBSITE_SITE_URL} />
         <meta property="og:site_name" content="Mondello Beach Battle" />
@@ -64,7 +70,7 @@ function App({ Component, pageProps }) {
         <meta property="og:image" content="/_next/static/images/share-image.jpg" />
         <meta name="twitter:card" content="Default content" />
         <meta property="fb:app_id" content="FB_APP_ID" />
-        <meta name="google-site-verification" content="[Google Web Master Tools]" />
+        <meta name="google-site-verification" content="oPXsjFSUzpvABhaiSXD9sv5s9PcYSNzuCTgJeCifwuY" />
         <meta name="msvalidate.01" content="[Bing Web Master Tools]" />
         {/* Other recommends */}
         <link rel="canonical" href={process.env.WEBSITE_SITE_URL} />
