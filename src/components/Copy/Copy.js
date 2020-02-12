@@ -4,7 +4,6 @@ import checkProps from '@jam3/react-check-extra-props';
 import classnames from 'classnames';
 
 import styles from './Copy.module.scss';
-console.log(styles);
 
 import useCSSMotion from '../../utils/hooks/use-css-motion-hook';
 
