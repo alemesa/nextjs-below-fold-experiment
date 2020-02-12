@@ -7,7 +7,6 @@ import { shouldAnimate } from '../motion/constants';
  */
 function useGsapMotion({ ref, animateIn, animateInit }, config = {}, rootRef = null) {
   const intersected = useIntersectionObserver(ref, config, rootRef);
-  console.log({ ref, animateIn, animateInit });
 
   useEffect(() => {
     if (shouldAnimate()) {

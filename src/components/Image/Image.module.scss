@@ -1,0 +1,25 @@
+@import '../../styles/shared.scss';
+
+.Image {
+  margin: px(75) 0;
+  img {
+    max-width: px(1200);
+    width: 80%;
+  }
+
+  figcaption {
+    margin-top: px(15);
+  }
+
+  &.isSmall {
+    width: 50%;
+  }
+
+  @include animateInit {
+    @include defaultAnimateInit();
+  }
+
+  @include animateIn {
+    @include defaultAnimateIn(1s);
+  }
+}

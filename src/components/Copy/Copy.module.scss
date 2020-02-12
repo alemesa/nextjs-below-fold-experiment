@@ -1,0 +1,29 @@
+@import '../../styles/shared.scss';
+
+.Copy {
+  @include font-size(24, 30);
+  margin: px(85) auto;
+  max-width: px(1200);
+  width: 80%;
+
+  > .title {
+    margin-bottom: px(40);
+  }
+
+  @include animateInit {
+    > .title,
+    > .text {
+      @include defaultAnimateInit();
+    }
+  }
+
+  @include animateIn {
+    > .title {
+      @include defaultAnimateIn(0.25s);
+    }
+
+    > .text {
+      @include defaultAnimateIn(0.75s);
+    }
+  }
+}

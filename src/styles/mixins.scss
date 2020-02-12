@@ -256,6 +256,25 @@
 ///   element {
 ///     @include defaultAnimateInit;
 ///   }
+@mixin opacityAnimateInit {
+  @include autoAlpha-0;
+}
+
+/// Add default animate in rules
+/// @example scss Input
+///   element {
+///     @include defaultAnimateIn;
+///   }
+@mixin opacityAnimateIn($delay: 0s) {
+  @include autoAlpha-1;
+  transition: $opacity-transition $delay;
+}
+
+/// Add default animate init rules
+/// @example scss Input
+///   element {
+///     @include defaultAnimateInit;
+///   }
 @mixin defaultAnimateInit {
   @include autoAlpha-0;
   transform: translateY(px(80));

@@ -39,9 +39,9 @@ function App({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <meta name="title" content="Jam3 generator" />
-        <meta name="description" content="Default description" />
-        <meta name="keywords" content="Jam3,web App,React" />
+        <meta name="title" content="Mondello Battle" />
+        <meta name="description" content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains" />
+        <meta name="keywords" content="mondello,battle,mondello battle" />
         {/* Generate favicons in https://realfavicongenerator.net */}
         <meta name="theme-color" content="#ffffff" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -54,11 +54,11 @@ function App({ Component, pageProps }) {
         <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
         {/* Share meta tags */}
         <meta property="og:locale" content="en_US" />>
-        <meta property="og:title" content="Default title" />
-        <meta property="og:description" content="Default title" />
+        <meta property="og:title" content="The battle of Mondello Beach" />
+        <meta property="og:description" content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.WEBSITE_SITE_URL} />
-        <meta property="og:site_name" content="Default site name" />
+        <meta property="og:site_name" content="Mondello Beach Battle" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image" content="/_next/static/images/share-image.jpg" />

@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: px(25) px(20);
+  padding: px(25) 15vw;
   box-shadow: $element-shadow;
   background-color: $white;
   @include z-index(main-nav);
@@ -16,6 +16,7 @@
     margin: 0 auto;
 
     > ul {
+      text-transform: uppercase;
       flex-grow: 1;
       @include flex-center-vert;
 

@@ -14,5 +14,5 @@ export function shouldAnimate() {
 export const INTERSECTION_OBSERVER_CONFIG = {
   threshold: 0.0,
   triggerOnce: true,
-  rootMargin: '0px 0px -20%'
+  rootMargin: '0px 0px -10%'
 };
