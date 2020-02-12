@@ -60,7 +60,7 @@ function App({ Component, pageProps }) {
         <meta property="og:title" content="The battle of Mondello Beach" />
         <meta
           property="og:description"
-          content="Famous Battle of Mondello: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains"
+          content="Famous Battle of Mondello Beach: This was a battle between some italian dudes and some barbarian from the north, they came down from the mountains"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.WEBSITE_SITE_URL} />

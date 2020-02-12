@@ -62,13 +62,17 @@ function Landing() {
         <h1 className={styles.title}>The battle of Mondello Beach</h1>
 
         <p className={styles.description}>
-          This was a battle between some italian dudes and some barbarian from the north, they came down from the
-          mountains and start hitting the other italians with pizzas, a huge battle started and left more than 500
-          gelatos dead in the beach, it was horrible.
+          This was a battle in the beach between some italian dudes and some barbarian from the north, they came down
+          from the mountains and start hitting the other italians with pizzas, a huge battle in the beach started and
+          left more than 500 gelatos dead in the beach, it was horrible.
         </p>
       </section>
 
-      <Image src={HeroPic} alt="Battle of Mondello in full display" caption="Still from the battle"></Image>
+      <Image
+        src={HeroPic}
+        alt="Battle of Mondello Beach in full display"
+        caption="Still from the battle in the beach"
+      ></Image>
 
       <section className={styles.dev} ref={devContainerRef}>
         <h2 className={styles['dev-title']} ref={devTitle}>
@@ -102,7 +106,7 @@ function Landing() {
 
       <Image
         src={PizzaPic}
-        alt="Awesome pizza picture that was used in the battle of Mondello"
+        alt="Awesome pizza picture that was used in the battle of Mondello beach"
         caption="Some of the weapons used in the battle"
       ></Image>
 
@@ -112,8 +116,8 @@ function Landing() {
       />
 
       <Copy
-        title="End of the Mondello Battle"
-        text="Is all good people are face, the war ended with the Italian victorians"
+        title="End of the Mondello Beach Battle"
+        text="Is all good people are face, the war ended with the Italian victorians - this is the secret of the battle of Mondello beach"
       />
 
       <Copy title="This is the greatest website" text="Mondello Beach Battle" />
