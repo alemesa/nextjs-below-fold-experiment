@@ -69,6 +69,11 @@ function App({ Component, pageProps }) {
         {/* Other recommends */}
         <link rel="canonical" href={process.env.WEBSITE_SITE_URL} />
         <link rel="dns-prefetch" href="//[NEXT-DNS-request.com]" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('enable-animations');"
+          }}
+        />
       </Head>
 
       <Component {...pageProps} />

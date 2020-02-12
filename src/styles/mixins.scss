@@ -89,6 +89,26 @@
   height: $height;
 }
 
+/// Hide element
+/// @example scss Input
+///   element {
+///     @include autoAlpha-0;
+///   }
+@mixin autoAlpha-0 {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/// Show element
+/// @example scss Input
+///   element {
+///     @include autoAlpha-1;
+///   }
+@mixin autoAlpha-1 {
+  visibility: visible;
+  opacity: 1;
+}
+
 /// Convert the pixels to rem for in a specific resolution, usually 1440px wide
 /// @example scss Input
 ///   section {
@@ -229,4 +249,56 @@
   width: $side-wrapper-width;
   height: 1px;
   min-width: $side-wrapper-min-width;
+}
+
+/// Add default animate init rules
+/// @example scss Input
+///   element {
+///     @include defaultAnimateInit;
+///   }
+@mixin defaultAnimateInit {
+  @include autoAlpha-0;
+  transform: translateY(px(80));
+  transition-property: none;
+}
+
+/// Add default animate in rules
+/// @example scss Input
+///   element {
+///     @include defaultAnimateIn;
+///   }
+@mixin defaultAnimateIn($delay: 0s) {
+  @include autoAlpha-1;
+  transform: translateY(0);
+  transition: $opacity-transition $delay, transform 0.83s $ease1 $delay;
+}
+
+/// Wrap animate init content
+/// @example scss Input
+///   div {
+///     @include animateInit {
+///        /* animation init rules */
+///     }
+///   }
+@mixin animateInit {
+  :global(#{$motion-flag}) & {
+    &.animateInit {
+      @content;
+    }
+  }
+}
+
+/// Wrap animate in content
+/// @example scss Input
+///   div {
+///     @include animateIn {
+///        /* animation in rules */
+///     }
+///   }
+@mixin animateIn {
+  :global(#{$motion-flag}) & {
+    &.animateIn {
+      @content;
+    }
+  }
 }

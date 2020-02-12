@@ -1,35 +1,39 @@
 import React, { useRef, useCallback, useEffect } from 'react';
+import classnames from 'classnames';
 import Head from 'next/head';
-import { useDispatch } from 'react-redux';
-import { gsap } from 'gsap';
+
+import gsap from 'gsap';
 
 import styles from './index.module.scss';
 
 import Nav from '../components/Nav/Nav';
 
 import { withRedux } from '../redux/withRedux';
-import { setLandingLoaded } from '../redux/modules/app';
+
+import useCSSMotion from '../utils/hooks/use-css-motion-hook';
+import useGsapMotion from '../utils/hooks/use-gsap-motion-hook';
+import ease from '../utils/motion/eases';
 
 function Landing() {
   const containerRef = useRef();
-  const dispatch = useDispatch();
+  const devContainerRef = useRef();
+  const devTitle = useRef();
+  const devDescription = useRef();
 
-  const animateInInit = useCallback(() => {
-    gsap.set(containerRef.current, { autoAlpha: 0 });
+  const motionState = useCSSMotion(containerRef);
+
+  const animateIn = useCallback(() => {
+    gsap
+      .timeline()
+      .to(devTitle.current, { duration: 0.83, y: 0, autoAlpha: 1, ease: ease.ease1 }, 1)
+      .to(devDescription.current, { duration: 0.83, y: 0, autoAlpha: 1, ease: ease.ease1 }, 1.5);
   }, []);
 
-  const animateIn = useCallback(async () => {
-    await gsap.to(containerRef.current, { duration: 0.5, autoAlpha: 1, delay: 0.3 });
-    dispatch(setLandingLoaded(true));
-  }, [dispatch]);
+  const animateInit = useCallback(() => {
+    gsap.set([devTitle.current, devDescription.current], { y: 80, autoAlpha: 0 });
+  }, []);
 
-  useEffect(() => {
-    animateInInit();
-  }, [animateInInit]);
-
-  useEffect(() => {
-    animateIn();
-  }, [animateIn]);
+  useGsapMotion({ ref: containerRef, animateIn, animateInit });
 
   return (
     <section className={styles.Landing}>
@@ -39,27 +43,27 @@ function Landing() {
 
       <Nav />
 
-      <section className={styles.hero} ref={containerRef}>
+      <section
+        className={classnames(styles.hero, {
+          [styles.animateInit]: motionState.animateInit,
+          [styles.animateIn]: motionState.animateIn
+        })}
+        ref={containerRef}
+      >
         <h1 className={styles.title}>Welcome to Jam3!</h1>
 
         <p className={styles.description}>
           To get started, edit <code>pages/index.js</code> and save to reload.
         </p>
+      </section>
 
-        <ul className={styles.row}>
-          <li>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h3>Code standard</h3>
-              <p>Learn more about Jam3 code standard.</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Jam3.dev</h3>
-              <p>Learn more about Jam3.dev</p>
-            </a>
-          </li>
-        </ul>
+      <section className={styles.dev} ref={devContainerRef}>
+        <h2 className={styles['dev-title']} ref={devTitle}>
+          Development Team
+        </h2>
+        <p className={styles['dev-description']} ref={devDescription}>
+          We use React for our all projects
+        </p>
       </section>
     </section>
   );

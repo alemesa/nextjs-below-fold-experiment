@@ -45,3 +45,10 @@ $navbar-padding-desktop: 4rem;
 // List of z-index element
 // ====================================================================
 $elements: pages, page-overlay, main-nav, sidebar, preloader, rotate;
+
+// ====================================================================
+// Motion
+// ====================================================================
+$motion-flag: 'html.enable-animations';
+$ease1: cubic-bezier(0.17, 0.17, 0.05, 1);
+$opacity-transition: opacity 0.83s $ease1;

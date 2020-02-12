@@ -26,12 +26,6 @@ function Nav() {
               <a>Home</a>
             </Link>
           </li>
-
-          <li>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </li>
         </ul>
 
         <ul className={styles.links}>

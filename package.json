@@ -35,7 +35,8 @@
   "dependencies": {
     "@jam3/detect": "1.0.2",
     "@jam3/react-hooks": "1.0.0",
-    "classnames": "2.2.6",
+    "bezier-easing": "^2.1.0",
+    "classnames": "^2.2.6",
     "default-passive-events": "1.0.10",
     "dompurify": "^2.0.8",
     "get-scroll": "^2.0.0",
