@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useIsomorphicLayoutEffect } from 'react-use';
 import useIntersectionObserver from './use-intersection-observer-hook';
 import { shouldAnimate } from '../motion/constants';
 
@@ -8,13 +8,13 @@ import { shouldAnimate } from '../motion/constants';
 function useGsapMotion({ ref, animateIn, animateInit }, config = {}, rootRef = null) {
   const intersected = useIntersectionObserver(ref, config, rootRef);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (shouldAnimate()) {
       animateInit();
     }
   }, [animateInit]);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (shouldAnimate()) {
       if (intersected) animateIn();
     }

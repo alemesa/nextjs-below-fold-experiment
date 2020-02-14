@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useIsomorphicLayoutEffect } from 'react-use';
 import { INTERSECTION_OBSERVER_CONFIG } from '../motion/constants';
 
 /**
@@ -13,7 +14,7 @@ function useIntersectionObserver(ref, config = {}, rootRef = null) {
     ...config
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const observer = new IntersectionObserver(function(entries) {
       if (options.triggerOnce) {
         if (entries[0].isIntersecting) {
