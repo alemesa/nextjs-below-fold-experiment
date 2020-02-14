@@ -13,22 +13,7 @@ if (process.env.WEBSITE_SITE_URL) {
   robotstxt({
     policy: [
       {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: [],
-        crawlDelay: 2
-      },
-      {
-        userAgent: 'OtherBot',
-        allow: '/',
-        disallow: ['/assets', '/_next'],
-        crawlDelay: 2
-      },
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/assets', '/_next'],
-        crawlDelay: 10
+        userAgent: '*'
       }
     ],
     sitemap: `${process.env.WEBSITE_SITE_URL}/sitemap.xml`,
