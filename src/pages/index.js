@@ -1,8 +1,9 @@
-import React, { useRef, useCallback, useEffect } from 'react';
+import React, { useRef, useCallback, useLayoutEffect } from 'react';
 import classnames from 'classnames';
 import Head from 'next/head';
 
 import gsap from 'gsap';
+import SplitText from '../utils/motion/SplitText';
 
 import styles from './index.module.scss';
 
@@ -28,6 +29,7 @@ function Landing() {
   const devContainerRef = useRef();
   const devTitle = useRef();
   const devDescription = useRef();
+  const mainTitle = useRef();
 
   const heroMotionState = useCSSMotion(containerRef);
 
@@ -42,6 +44,30 @@ function Landing() {
     gsap.set([devTitle.current, devDescription.current], { y: 80, autoAlpha: 0 });
   }, []);
 
+  const animateCharsInit = useCallback(() => {
+    gsap.set(mainTitle.current, { autoAlpha: 0 });
+  }, []);
+
+  const animateCharsIn = useCallback(() => {
+    const splittedText = new SplitText(mainTitle.current, { type: 'chars, words' });
+    gsap.set(containerRef.current, { perspective: 400 });
+    gsap.set(mainTitle.current, { autoAlpha: 1 });
+    gsap.from(splittedText.chars, {
+      duration: 1,
+      autoAlpha: 0,
+      scale: 0.3,
+      y: 100,
+      stagger: 0.04,
+      onComplete: () => splittedText.revert()
+    });
+  }, []);
+
+  useGsapMotion({
+    ref: mainTitle,
+    animateIn: animateCharsIn,
+    animateInit: animateCharsInit
+  });
+
   useGsapMotion({ ref: devContainerRef, animateIn, animateInit });
 
   return (
@@ -52,21 +78,25 @@ function Landing() {
 
       <Nav />
 
-      <section
+      <div
         className={classnames(styles.hero, {
           [styles.animateInit]: heroMotionState.animateInit,
           [styles.animateIn]: heroMotionState.animateIn
         })}
         ref={containerRef}
       >
-        <h1 className={styles.title}>The battle of Mondello Beach</h1>
+        <h1 className={styles['second-title']}>The battle of Mondello Beach</h1>
+
+        <h2 className={styles.title} ref={mainTitle}>
+          The battle of Mondello Beach with Split
+        </h2>
 
         <p className={styles.description}>
           This was a battle in the beach between some italian dudes and some barbarian from the north, they came down
           from the mountains and start hitting the other italians with pizzas, a huge battle in the beach started and
           left more than 500 gelatos dead in the beach, it was horrible.
         </p>
-      </section>
+      </div>
 
       <Image
         src={HeroPic}
@@ -74,14 +104,14 @@ function Landing() {
         caption="Still from the battle in the beach"
       ></Image>
 
-      <section className={styles.dev} ref={devContainerRef}>
+      <div className={styles.dev} ref={devContainerRef}>
         <h2 className={styles['dev-title']} ref={devTitle}>
           Mondello Battle is considered to be the biggest battle according to historian Alejandro Mesa
         </h2>
         <p className={styles['dev-description']} ref={devDescription}>
           He knows everything
         </p>
-      </section>
+      </div>
 
       <Image src={ItalyFlag} alt="Greatest flag ever" caption="The flag from the Mondello battle"></Image>
 

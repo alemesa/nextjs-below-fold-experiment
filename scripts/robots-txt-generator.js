@@ -15,7 +15,7 @@ if (process.env.WEBSITE_SITE_URL) {
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/assets', '/_next'],
+        disallow: [],
         crawlDelay: 2
       },
       {

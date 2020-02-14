@@ -5,7 +5,8 @@
     width: 100%;
     color: #333;
 
-    > .title {
+    > .title,
+    > .second-title {
       margin: 0;
       width: 100%;
       padding-top: px(80);
@@ -20,17 +21,14 @@
     }
 
     @include animateInit {
-      > .title,
+      > .second-title,
       > .description {
         @include defaultAnimateInit();
       }
     }
 
     @include animateIn {
-      > .title {
-        @include defaultAnimateIn(0s);
-      }
-
+      > .second-title,
       > .description {
         @include defaultAnimateIn(0.5s);
       }
