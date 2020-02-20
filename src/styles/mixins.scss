@@ -300,10 +300,8 @@
 ///     }
 ///   }
 @mixin animateInit {
-  :global(#{$motion-flag}) & {
-    &.animateInit {
-      @content;
-    }
+  &.animateInit {
+    @content;
   }
 }
 
@@ -315,9 +313,7 @@
 ///     }
 ///   }
 @mixin animateIn {
-  :global(#{$motion-flag}) & {
-    &.animateIn {
-      @content;
-    }
+  &.animateIn {
+    @content;
   }
 }
