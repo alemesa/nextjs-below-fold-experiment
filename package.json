@@ -40,7 +40,7 @@
     "default-passive-events": "1.0.10",
     "dompurify": "^2.0.8",
     "get-scroll": "^2.0.0",
-    "gsap": "3.1.1",
+    "gsap": "3.6.0",
     "next": "9.2.1",
     "no-op": "1.0.3",
     "normalize.css": "^8.0.1",
