@@ -95,7 +95,7 @@
     "imagemin-svgo": "7.0.0",
     "isomorphic-unfetch": "3.0.0",
     "maxstache": "^1.0.7",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "mkdirp": "^1.0.3",
     "next-compose-plugins": "2.2.0",
     "next-fonts": "1.0.3",
